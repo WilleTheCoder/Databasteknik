@@ -1,0 +1,53 @@
+lab3 commands
+
+1) 
+PING) -X GET http://localhost:7007/ping
+
+RESET) curl -X POST http://localhost:7007/reset
+
+USERS) curl -X POST http://localhost:7007/users | jq
+{
+     "username": "alice",
+     "fullName": "Alice Lidell",
+     "pwd": "aliceswaytoosimplepassword"
+}
+
+MOVIES) curl -X POST http://localhost:7007/movies | jq
+{
+    "imdbKey": "tt4975722",
+    "title": "Moonlight",
+    "year": 2016
+}
+
+
+PERFORMANCES) curl -X POST http:/localhost:7007/performances | jq
+{
+     "imdbKey": "tt5580390",
+     "theater": "Kino",
+     "date": "2021-02-22",
+     "time": "19:00"
+}
+
+6) curl -X GET http://localhost:7007/movies\?title=Moonlight
+localhost:7007/movies?title=Moonlight
+
+
+7) curl -X GET http://localhost:7007/movies\?title=Moonlight\&year=2016
+localhost:7007/movies?title=Moonlight&year=2016
+
+8) curl -X GET http://localhost:7007/movies\?year=2016
+localhost:7007/movies?&year=2016
+
+9) curl -X GET http://localhost:7007/movies/<imdb-key>
+localhost:7007/movies/tt4975722
+
+10) curl -X POST http://localhost:7007/tickets | jq
+{
+     "username": <username>,
+     "pwd": <pwd>,
+     "performanceId": <performance-id>
+}
+
+
+
+
